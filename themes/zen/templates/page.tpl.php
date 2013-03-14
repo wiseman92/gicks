@@ -70,47 +70,63 @@
  */
 ?>
 
+<div class="header-top">
+
+</div>
 <div id="page">
 
-  <header id="header" role="banner">
+    <header id="header" role="banner">
 
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-    <?php endif; ?>
-
-    <?php if ($site_name || $site_slogan): ?>
-      <hgroup id="name-and-slogan">
+    <div id="logo">
         <?php if ($site_name): ?>
-          <h1 id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
+        <h1 id="site-name">
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span id="logo_text">Gicks.ru</span></a>
+        </h1>
+        <?php endif; ?>
+    </div>
+        <div class="header-right-end"></div>
+
+        <?php print render($page['header']); ?>
+        <div>
+            <div class="header-body">
+                <div class="hand">
+
+                </div>
+            </div>
+            <!--
+            <div class="header-end"></div>
+            -->
+        </div>
+    </header>
+
+<div class="pen_line">
+    <div id="navigation">
+
+        <?php if ($main_menu): ?>
+        <nav id="main-menu" role="navigation">
+            <?php
+            // This code snippet is hard to modify. We recommend turning off the
+            // "Main menu" on your sub-theme's settings form, deleting this PHP
+            // code block, and, instead, using the "Menu block" module.
+            // @see http://drupal.org/project/menu_block
+            print theme('links__system_main_menu', array(
+                'links' => $main_menu,
+                'attributes' => array(
+                    'class' => array('links', 'inline', 'clearfix'),
+                ),
+                'heading' => array(
+                    'text' => t('Main menu'),
+                    'level' => 'h2',
+                    'class' => array('element-invisible'),
+                ),
+            )); ?>
+        </nav>
         <?php endif; ?>
 
-        <?php if ($site_slogan): ?>
-          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-        <?php endif; ?>
-      </hgroup><!-- /#name-and-slogan -->
-    <?php endif; ?>
+        <?php print render($page['navigation']); ?>
 
-    <?php if ($secondary_menu): ?>
-      <nav id="secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-
-  </header>
+    </div><!-- /#navigation -->
+</div>
 
   <div id="main">
 
@@ -133,32 +149,7 @@
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
-    <div id="navigation">
 
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see http://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
-
-      <?php print render($page['navigation']); ?>
-
-    </div><!-- /#navigation -->
 
     <?php
       // Render the sidebars to see if there's anything in them.

@@ -17,9 +17,13 @@
 .region-bottom {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
-  margin-left: auto;
-  margin-right: auto;
- /* max-width: 1200px;*/
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    background: white;
+}
+body{
+    background: #163039
 }
 
 /*
@@ -81,6 +85,10 @@
     top: 0; /* Move the navbar up inside #main's padding. */
     height: 3em;
     width: 100%;
+    margin-top: 460px;
+    font-family: adventure;
+    font-size: 120%;
+
   }
 }
 
@@ -257,7 +265,86 @@
 }
 
 header{
-	width:	1000px;
-	margin:	0 auto;
-	
+    background-image: url(../../images/header.png);
+    background-repeat: no-repeat;
+    height: 274px;
+    margin-left: -2px;
+}
+
+.header-top{
+    background-color: #000000;
+    background-image: url(../../images/header_top.png);
+    background-repeat: no-repeat;
+    height: 109px;
+    padding-left: 10px;
+
+}
+div#logo{
+    background-image: url(../../images/logo.png);
+    background-repeat: no-repeat;
+    width: 278px;
+    height: 173px;
+    margin-left: 86px;
+    margin-top: 128px;
+    padding-left: 65px;
+    padding-top: 15px;
+}
+div.header-body{
+    background: url(../../images/header_line_bg.png) repeat-x;
+    width: 400px;
+    height: 274px;
+    margin-left: 793px;
+    margin-top: 0px;
+}
+div.header-end{
+    background-image: url(../../images/header_end.png);
+    background-repeat: no-repeat;
+    float: right;
+    width: 25px;
+    height: 274px;
+    margin-top: -274px;
+    margin-right: -15px;
+}
+.hand{
+    background-image: url(../../images/hand.png);
+    background-repeat: no-repeat;
+    width: 252px;
+    height: 257px;
+    float: right;
+    margin-top: 73px;
+}
+.pen_line{
+    background-color: #474747;
+    width: 800px;
+    height: 1px;
+    margin-top: 45px;
+    margin-left: 150px;
+}
+a{
+   text-decoration: none;
+   text-transform: lowercase;
+}
+#logo_text{
+    font-family: CorridaCTTRegular;
+    font-size: 100%;
+    margin-left: 20px;
+    color: white;
+}
+
+
+
+@font-face {
+    font-family: menu_font; /* имя шрифта для CSS правил */
+    src: local("menu_font"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../../../menu_font.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face {
+    font-family: adventure; /* имя шрифта для CSS правил */
+    src: local("adventure"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../../../adventure.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+@font-face {
+    font-family: CorridaCTTRegular; /* имя шрифта для CSS правил */
+    src: local("CorridaCTTRegular"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../../../CorridaCTTRegular.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
